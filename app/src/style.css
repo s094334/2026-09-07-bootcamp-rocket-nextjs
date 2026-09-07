@@ -1,0 +1,61 @@
+@layer base {
+  body {
+    font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
+  }
+}
+
+@theme {
+  --font-display: "Noto Sans TC", sans-serif;
+  /* 字型大小 */
+  --text-desktop-h1: 48px;
+  --text-desktop-h2: 36px;
+  --text-desktop-h3: 32px;
+  --text-desktop-h4: 28px;
+  --text-desktop-body1: 24px;
+  --text-desktop-body2: 20px;
+  --text-desktop-body3: 16px;
+
+  --text-mobile-h1: 32px;
+  --text-mobile-h2: 28px;
+  --text-mobile-h3: 24px;
+  --text-mobile-h4: 20px;
+  --text-mobile-body1: 20px;
+  --text-mobile-body2: 18px;
+  --text-mobile-body3: 16px;
+
+  /* line height */
+  --leading-primary: 1.5;
+  --leading-others: 1.75;
+
+  /* letter-spacing */
+  --tracking-base: 0.02em;
+
+  /* color */
+  --color-rocket-100: #E5EBFF;
+  --color-rocket-200: #BFC9F0;
+  --color-rocket-300: #A6B6F1;
+  --color-rocket-400: #7F94E2;
+  --color-rocket-yellow: #FFEEA3;
+
+  --color-space-100: #F5F1FF;
+  --color-space-200: #EEE5FF;
+  --color-space-300: #CAB2F1;
+  --color-space-400: #B28FEA;
+  --color-space-orange: #FFD887;
+
+  /* border radius */
+  --radius-border-xl: 40px;
+  --radius-border-l: 24px;
+  --radius-border-m: 16px;
+  --radius-border-s: 12px;
+
+  /* neutral */
+  --color-neutral-white: #ffffff;
+  --color-neutral-100: #F8F9FD;
+  --color-neutral-200: #F0F0F0;
+  --color-neutral-300: #E0E0E0;
+  --color-neutral-400: #CDCDCD;
+  --color-neutral-500: #9A9A9A;
+  --color-neutral-600: #757575;
+  --color-neutral-700: #363636;
+}
