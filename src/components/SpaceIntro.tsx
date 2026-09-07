@@ -1,14 +1,14 @@
-import mapImgLg from "../assets/space-page/map-lg.png"
-import mapImgSm from "../assets/space-page/map-sm.png" 
+import mapImgLg from "../assets/space-page/map-lg.png";
+import mapImgSm from "../assets/space-page/map-sm.png";
 
 function SpaceIntro() {
   return (
     <section className="bg-space-200 py-9 px-12 md:py-15 flex flex-col-reverse gap-5 md:flex-row md:gap-24 justify-center items-center text-neutral-700 rounded-border-xl">
       <div className="hidden bg-neutral-white rounded-border-m p-3 max-w-[636px] md:flex items-center justify-center">
-        <img src={ mapImgLg} alt="Map image" />
+        <img src={mapImgLg.src} alt="Map image" />
       </div>
       <div className="md:hidden bg-neutral-white rounded-border-s p-3 max-w-[332px] flex items-center justify-center">
-        <img src={ mapImgSm } alt="Map image" />
+        <img src={mapImgSm.src} alt="Map image" />
       </div>
       <div>
         <h3 className="font-bold text-mobile-body3 md:text-desktop-body2">
@@ -24,7 +24,7 @@ function SpaceIntro() {
         </p>
       </div>
     </section>
-  )
+  );
 }
 
-export default SpaceIntro
+export default SpaceIntro;
