@@ -1,16 +1,26 @@
+import type { StaticImageData } from "next/image"
+import type { ReactNode } from "react"
+
 import no1 from "../assets/rocket-page/ic-number/ic-no.1-lg.svg"
 import no2 from "../assets/rocket-page/ic-number/ic-no.2-lg.svg"
 import no3 from "../assets/rocket-page/ic-number/ic-no.3-lg.svg"
 import no4 from "../assets/rocket-page/ic-number/ic-no.4-lg.svg"
 import no5 from "../assets/rocket-page/ic-number/ic-no.5-lg.svg"
 
-const FaqItem = ({ numberImg, index, question, answer}) => {
+type FaqItemProps = {
+  numberImg: StaticImageData
+  index: number
+  question: string
+  answer: ReactNode
+}
+
+const FaqItem = ({ numberImg, index, question, answer }: FaqItemProps) => {
   return (
     <div>
       <div className="max-w-[856px]">
         <div className={`flex gap-8 p-5 border-b-2 border-neutral-200 ${ index === 0 ? "border-t-2" : "" }`}>
           <img
-            src={ numberImg }
+            src={ numberImg.src }
             alt={ `No.${ index + 1 } logo` }
             className="self-start w-5 md:w-6"
           />

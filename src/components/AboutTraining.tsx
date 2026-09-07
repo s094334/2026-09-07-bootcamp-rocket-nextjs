@@ -1,43 +1,75 @@
-import { useState } from 'react';
-import backgroundImage from "../assets/rocket-page/training/training-bg.png"
-import trainingFrontend from "../assets/rocket-page/training/training-img-frontend-lg.svg"
-import trainingBackend from "../assets/rocket-page/training/training-img-backend-lg.svg"
-import trainingUI from "../assets/rocket-page/training/training-img-ui-lg.svg"
-import coachWeijie from "../assets/rocket-page/coach/coach-weijie.svg"
-import coachYinmin from "../assets/rocket-page/coach/coach-yinmin.svg"
-import coachJustin from "../assets/rocket-page/coach/coach-justin.svg"
-import coachCasper from "../assets/rocket-page/coach/coach-casper.svg"
-import callToAction from "../assets/rocket-page/ic-go-rocket.svg"
+import { useState } from "react";
+import type { StaticImageData } from "next/image";
+import type { ReactNode } from "react";
 
-const ProgramCard = ({ title, reverse, aboutTitle, positionContent, positionHighlight, requirements, skills, img, imgAlt }) => {
+import backgroundImage from "../assets/rocket-page/training/training-bg.png";
+import trainingFrontend from "../assets/rocket-page/training/training-img-frontend-lg.svg";
+import trainingBackend from "../assets/rocket-page/training/training-img-backend-lg.svg";
+import trainingUI from "../assets/rocket-page/training/training-img-ui-lg.svg";
+import coachWeijie from "../assets/rocket-page/coach/coach-weijie.svg";
+import coachYinmin from "../assets/rocket-page/coach/coach-yinmin.svg";
+import coachJustin from "../assets/rocket-page/coach/coach-justin.svg";
+import coachCasper from "../assets/rocket-page/coach/coach-casper.svg";
+import callToAction from "../assets/rocket-page/ic-go-rocket.svg";
+
+type ProgramCardProps = {
+  title: string;
+  reverse: boolean;
+  aboutTitle: string;
+  positionContent: string;
+  positionHighlight: string;
+  requirements?: ReactNode[];
+  skills: string[];
+  img: StaticImageData;
+  imgAlt: string;
+};
+
+const ProgramCard = ({
+  title,
+  reverse,
+  aboutTitle,
+  positionContent,
+  positionHighlight,
+  requirements,
+  skills,
+  img,
+  imgAlt,
+}: ProgramCardProps) => {
   return (
-    <div style={{ backgroundImage: `url(${backgroundImage})` }} className="w-full bg-neutral-white text-neutral-700 px-12 pb-[34px] pt-[50px] md:pt-16 md:pb-10 md:pr-20 md:pl-12 md:rounded-border-m border-neutral-200 border-2 relative">
+    <div
+      style={{ backgroundImage: `url(${backgroundImage.src})` }}
+      className="w-full bg-neutral-white text-neutral-700 px-12 pb-[34px] pt-[50px] md:pt-16 md:pb-10 md:pr-20 md:pl-12 md:rounded-border-m border-neutral-200 border-2 relative"
+    >
       <div className="inline-block border-2 border-neutral-700 rounded-border-s shadow-[4px_4px_0px_0px_#363636] bg-neutral-white px-5 md:px-10 py-3 absolute -top-8">
         <h3 className="font-bold text-mobile-body1 md:text-desktop-body1 text-neutral-700">
-          { title }
+          {title}
         </h3>
       </div>
-      <div className={`flex flex-col-reverse items-center gap-7 md:justify-between md:gap-12 ${ reverse ? "md:flex-row-reverse" : "md:flex-row"}`}>
+      <div
+        className={`flex flex-col-reverse items-center gap-7 md:justify-between md:gap-12 ${reverse ? "md:flex-row-reverse" : "md:flex-row"}`}
+      >
         <div className="flex flex-col gap-8 md:gap-9 max-w-[618px]">
           <div className="flex flex-col gap-5">
             <h3 className="font-bold border-neutral-700 text-mobile-body2 md:text-desktop-body2 border-b-3 self-start">
-              { aboutTitle }
+              {aboutTitle}
             </h3>
             <p className="font-normal text-mobile-body3 md:text-desktop-body3">
-              { positionContent }
+              {positionContent}
               <span className="font-bold bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)]">
-                { positionHighlight }
+                {positionHighlight}
               </span>
               。
             </p>
           </div>
-          { requirements && (
+          {requirements && (
             <div className="flex flex-col gap-5">
               <h3 className="font-bold border-neutral-700 text-mobile-body2 md:text-desktop-body2 border-b-3 self-start">
                 應徵門檻
               </h3>
               <ol className="list-decimal list-inside [&>li]:pl-4 [&>li]:-indent-4 text-desktop-body3">
-                { requirements.map((requirement, index) => <li key={ index+1 }>{ requirement }</li>) }
+                {requirements.map((requirement, index) => (
+                  <li key={index + 1}>{requirement}</li>
+                ))}
               </ol>
             </div>
           )}
@@ -46,27 +78,35 @@ const ProgramCard = ({ title, reverse, aboutTitle, positionContent, positionHigh
               你會學到
             </h3>
             <ol className="list-decimal list-inside [&>li]:pl-4 [&>li]:-indent-4 text-desktop-body3">
-              { skills.map((skill) => (<li key={ skill }>{ skill }</li>))}
+              {skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
             </ol>
           </div>
         </div>
         <img
-          src={ img }
-          alt={ imgAlt }
+          src={img.src}
+          alt={imgAlt}
           className="max-w-[218px] md:max-w-[282px]"
         />
       </div>
     </div>
-  )
+  );
 };
 
-const CoachPhoto = ({ img, imgAlt, onSelect }) => {
+type CoachPhotoProps = {
+  img: StaticImageData;
+  imgAlt: string;
+  onSelect: () => void;
+};
+
+const CoachPhoto = ({ img, imgAlt, onSelect }: CoachPhotoProps) => {
   return (
-    <button type="button" onClick={ onSelect } className="cursor-pointer">
-      <img src={ img } alt={ imgAlt }/>
+    <button type="button" onClick={onSelect} className="cursor-pointer">
+      <img src={img.src} alt={imgAlt} />
     </button>
-  )
-}
+  );
+};
 
 function AboutTraining() {
   const programs = [
@@ -75,23 +115,29 @@ function AboutTraining() {
       title: "前端工程師",
       reverse: false,
       aboutTitle: "關於前端",
-      positionContent: "主要專精 JavaScript 前端 (65%)、後端 (35%) 開發，投入語言為 HTML、CSS、JavaScript，",
+      positionContent:
+        "主要專精 JavaScript 前端 (65%)、後端 (35%) 開發，投入語言為 HTML、CSS、JavaScript，",
       positionHighlight: "適合有一些 HTML、CSS、JS 基礎的學員報名",
       requirements: [
-        <>會用 CSS Flexbox 排過網頁，有 RWD 響應式網頁概念，需提交 CSS切版作品，請
-        <span className="font-bold bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)]">
-        在履歷上需附網頁切版作品</span>，Codepen、GitHub Pages 皆可。</>,
-        "了解 JS 變數、陣列物件、DOM、監聽、AJAX等知識，尚未熟練也沒關係。"
+        <>
+          會用 CSS Flexbox 排過網頁，有 RWD 響應式網頁概念，需提交
+          CSS切版作品，請
+          <span className="font-bold bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)]">
+            在履歷上需附網頁切版作品
+          </span>
+          ，Codepen、GitHub Pages 皆可。
+        </>,
+        "了解 JS 變數、陣列物件、DOM、監聽、AJAX等知識，尚未熟練也沒關係。",
       ],
       skills: [
         "網頁切版技能：HTML5、CSS3、SCSS、Bootsrap5、TailwindCSS",
         "前端開發技能：JavaScript、TypeScript、ES6、SPA、JS plugin 整合、API 介接、NPM",
         "後端開發技能：Node.js、MongoDB、heroku、express、JWT",
         "JS 框架：React(Hooks)、Vue3，會依照未來你想投入的公司進行調整",
-        "程式版控：Git、GitHub、Git Flow 工作流程"
+        "程式版控：Git、GitHub、Git Flow 工作流程",
       ],
       img: trainingFrontend,
-      imgAlt : "training front-end image"
+      imgAlt: "training front-end image",
     },
     {
       id: 2,
@@ -103,10 +149,10 @@ function AboutTraining() {
       skills: [
         "後端語言：C#",
         "程式架構：ASP.NET Web Form、ASP.NET MVC、Web API",
-        "資料庫與雲端主機：MSSQL、Microsoft Azure"
+        "資料庫與雲端主機：MSSQL、Microsoft Azure",
       ],
       img: trainingBackend,
-      imgAlt : "training Back-end image"
+      imgAlt: "training Back-end image",
     },
     {
       id: 3,
@@ -114,18 +160,19 @@ function AboutTraining() {
       reverse: false,
       aboutTitle: "關於設計",
       positionContent: "主要以網頁 UI 設計 50%、網頁前端 50% 的雙技能樹養成，",
-      positionHighlight: "適合具備視覺背景，操作過繪圖軟體尤佳，歡迎無工作經驗的學員報名",
+      positionHighlight:
+        "適合具備視覺背景，操作過繪圖軟體尤佳，歡迎無工作經驗的學員報名",
       skills: [
         "網頁前置規劃：Logic Flow、Wireframe、網格系統、使用者體驗",
         "介面繪製流程：Figma 操作、Mockup、Prototype、標註文件",
-        "網頁切版技能：HTML5、CSS、Bootstrap5"
+        "網頁切版技能：HTML5、CSS、Bootstrap5",
       ],
       img: trainingUI,
-      imgAlt : "training UI image"
-    }
+      imgAlt: "training UI image",
+    },
   ];
 
-  const coaches = [ 
+  const coaches = [
     {
       id: 1,
       img: coachWeijie,
@@ -133,33 +180,39 @@ function AboutTraining() {
       role: "前端教練",
       name: "廖洧杰",
       experience: [
-        <>2016-2022 過往經歷：<a
-                href="https://www.hexschool.com/"
-                target="_blank"
-                className="underline"
-              >
-                六角學院校長
-              </a>
-              、
-              <a
-                href="https://www.facebook.com/profile.php?id=100039975056467#"
-                target="_blank"
-                className="underline"
-              >
-                高雄火箭隊
-              </a>前端教練</>,
+        <>
+          2016-2022 過往經歷：
+          <a
+            href="https://www.hexschool.com/"
+            target="_blank"
+            className="underline"
+          >
+            六角學院校長
+          </a>
+          、
+          <a
+            href="https://www.facebook.com/profile.php?id=100039975056467#"
+            target="_blank"
+            className="underline"
+          >
+            高雄火箭隊
+          </a>
+          前端教練
+        </>,
         "2013-2019 成功案例：協助無資訊背景轉職工程師人數超過 500 位",
         "2013-2019 授課人數：線上+線下授課學員超過 25,000 位",
-        <>2014-2019 線下授課：
-              <a
-                href="https://www.im.nuk.edu.tw/?page_id=95"
-                target="_blank"
-                className="underline"
-              >
-                高雄大學前端領域兼任講師
-              </a></>,
-        "2007-2019 實務經驗：經手超過 100 個實際專案，其領域不乏中小企業、政府專案、銀行系統"
-      ]
+        <>
+          2014-2019 線下授課：
+          <a
+            href="https://www.im.nuk.edu.tw/?page_id=95"
+            target="_blank"
+            className="underline"
+          >
+            高雄大學前端領域兼任講師
+          </a>
+        </>,
+        "2007-2019 實務經驗：經手超過 100 個實際專案，其領域不乏中小企業、政府專案、銀行系統",
+      ],
     },
     {
       id: 2,
@@ -171,8 +224,8 @@ function AboutTraining() {
         "六角學院前端工程師",
         "六角學院前端講師",
         "金龍國小教育訓練講師",
-        "國泰產險教育訓練講師"
-      ]
+        "國泰產險教育訓練講師",
+      ],
     },
     {
       id: 3,
@@ -208,8 +261,8 @@ function AboutTraining() {
         "屏東縣政府招商網",
         "行政院南區服務中心網站",
         "經濟部水利署南區水資源局",
-        "105 年度業務及全球資訊網站維護及功能擴充計畫"
-      ]
+        "105 年度業務及全球資訊網站維護及功能擴充計畫",
+      ],
     },
     {
       id: 4,
@@ -227,16 +280,14 @@ function AboutTraining() {
         "研討會經驗-經驗豐富的技術開發者 2017 Modern Web 技術講者",
         "2021 {Laravel x Vue} Conf 技術講者",
         "五屆 IT 鐵人賽優選",
-        "技術 Blog - 卡斯伯前端"
-      ]
-    }
-  ]
+        "技術 Blog - 卡斯伯前端",
+      ],
+    },
+  ];
 
   const [selectedId, setSelectedId] = useState(coaches[0].id);
 
-  const selectedCoach = coaches.find(
-    (coach) => coach.id === selectedId
-  )
+  const selectedCoach = coaches.find((coach) => coach.id === selectedId);
 
   return (
     <>
@@ -258,33 +309,29 @@ function AboutTraining() {
           </p>
         </div>
         <div className="max-w-[1076px] w-full flex flex-col gap-20 mt-20">
-          {
-            programs.map((program)=> {
-              return <ProgramCard key={ program.id } { ...program }/>
-            })
-          }
+          {programs.map((program) => {
+            return <ProgramCard key={program.id} {...program} />;
+          })}
         </div>
         <div className="mt-10 mb-[66px] pl-[49px] md:pl-0 md:mt-16 md:mb-32">
           <h2 className="font-bold text-neutral-700 text-mobile-h3 md:text-desktop-h3">
             教練團
           </h2>
           <div className="flex gap-6 mb-7">
-            {
-              coaches.map((coach) => (
-                <CoachPhoto
-                  key={coach.id}
-                  {...coach}
-                  onSelect={() => setSelectedId(coach.id)}
-                />
-              ))
-            }
+            {coaches.map((coach) => (
+              <CoachPhoto
+                key={coach.id}
+                {...coach}
+                onSelect={() => setSelectedId(coach.id)}
+              />
+            ))}
           </div>
           <h3 className="font-bold text-mobile-h4 md:text-desktop-body1 mb-3">
-            { selectedCoach.role } | { selectedCoach.name }
+            {selectedCoach?.role} | {selectedCoach?.name}
           </h3>
           <ul className="list-disc list-inside font-normal text-desktop-body3 text-neutral-700 [&>li]:pl-4 [&>li]:-indent-4">
-            { selectedCoach.experience.map((item, index) => (
-              <li key={ index }>{ item }</li>
+            {selectedCoach?.experience.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
@@ -296,14 +343,14 @@ function AboutTraining() {
             馬上報名！
           </h3>
           <img
-            src={ callToAction }
+            src={callToAction.src}
             alt="Go button logo"
             className="hidden group-hover:block absolute right-10 bottom-2 md:right-1/3 md:bottom-4"
           />
         </a>
       </section>
     </>
-  )
+  );
 }
 
-export default AboutTraining
+export default AboutTraining;
