@@ -28,7 +28,7 @@ const PricingCard = ({ title, price, features }: PricingCardProps) => {
       <ul className="flex flex-col gap-4 max-w-[365px] w-full mx-auto">
         {features.map((feature, index) => (
           <li key={index + 1} className="flex items-center gap-3">
-            <img src={checkLogo} alt="check logo" className="w-7 h-7" />
+            <img src={checkLogo.src} alt="check logo" className="w-7 h-7" />
             <span
               className={`mt-1 ${feature.highlight ? "bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)]" : ""}`}
             >
