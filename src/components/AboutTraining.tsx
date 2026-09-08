@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import type { StaticImageData } from "next/image";
 import type { ReactNode } from "react";

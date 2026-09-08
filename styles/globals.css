@@ -1,13 +1,8 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
-  }
-}
-
 @theme {
-  --font-display: "Noto Sans TC", sans-serif;
+  --font-sans: var(--font-josefin-sans), var(--font-noto-sans-tc), sans-serif;
+  --font-display: var(--font-noto-sans-tc), sans-serif;
   /* 字型大小 */
   --text-desktop-h1: 48px;
   --text-desktop-h2: 36px;
