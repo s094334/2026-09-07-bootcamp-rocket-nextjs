@@ -1,1 +1,63 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
+  }
+}
+
+@theme {
+  --font-display: "Noto Sans TC", sans-serif;
+  /* 字型大小 */
+  --text-desktop-h1: 48px;
+  --text-desktop-h2: 36px;
+  --text-desktop-h3: 32px;
+  --text-desktop-h4: 28px;
+  --text-desktop-body1: 24px;
+  --text-desktop-body2: 20px;
+  --text-desktop-body3: 16px;
+
+  --text-mobile-h1: 32px;
+  --text-mobile-h2: 28px;
+  --text-mobile-h3: 24px;
+  --text-mobile-h4: 20px;
+  --text-mobile-body1: 20px;
+  --text-mobile-body2: 18px;
+  --text-mobile-body3: 16px;
+
+  /* line height */
+  --leading-primary: 1.5;
+  --leading-others: 1.75;
+
+  /* letter-spacing */
+  --tracking-base: 0.02em;
+
+  /* color */
+  --color-rocket-100: #e5ebff;
+  --color-rocket-200: #bfc9f0;
+  --color-rocket-300: #a6b6f1;
+  --color-rocket-400: #7f94e2;
+  --color-rocket-yellow: #ffeea3;
+
+  --color-space-100: #f5f1ff;
+  --color-space-200: #eee5ff;
+  --color-space-300: #cab2f1;
+  --color-space-400: #b28fea;
+  --color-space-orange: #ffd887;
+
+  /* border radius */
+  --radius-border-xl: 40px;
+  --radius-border-l: 24px;
+  --radius-border-m: 16px;
+  --radius-border-s: 12px;
+
+  /* neutral */
+  --color-neutral-white: #ffffff;
+  --color-neutral-100: #f8f9fd;
+  --color-neutral-200: #f0f0f0;
+  --color-neutral-300: #e0e0e0;
+  --color-neutral-400: #cdcdcd;
+  --color-neutral-500: #9a9a9a;
+  --color-neutral-600: #757575;
+  --color-neutral-700: #363636;
+}

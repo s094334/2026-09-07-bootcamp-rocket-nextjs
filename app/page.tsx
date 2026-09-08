@@ -1,7 +1,17 @@
+import AboutRocket from "../src/components/AboutRocket";
+import SuccessCase from "../src/components/SuccessCase";
+import AboutTraining from "../src/components/AboutTraining";
+import AboutFee from "../src/components/AboutFee";
+import Support from "../src/components/Support";
+
 export default function Home() {
   return (
-    <main className="flex flex-1 items-center justify-center">
-      <h1 className="text-3xl font-semibold">Bootcamp Rocket</h1>
-    </main>
+    <>
+      <AboutRocket />
+      <SuccessCase />
+      <AboutTraining />
+      <AboutFee />
+      <Support />
+    </>
   );
 }
