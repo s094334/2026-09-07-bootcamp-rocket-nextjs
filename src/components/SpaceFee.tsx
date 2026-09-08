@@ -78,7 +78,7 @@ function SpaceFee() {
         <div className="hidden md:block relative">
           <h2 className="font-bold text-desktop-h2">進駐費用</h2>
           <img
-            src={promotionImgLg}
+            src={promotionImgLg.src}
             alt="Promotion image"
             className="absolute -top-25 left-20"
           />
@@ -88,7 +88,7 @@ function SpaceFee() {
           </p>
         </div>
         <div className="block md:hidden relative mb-4">
-          <img src={promotionImgSm} alt="Promotion image" />
+          <img src={promotionImgSm.src} alt="Promotion image" />
           <div className="absolute flex flex-col top-4 left-3">
             <p className="font-normal text-sm">
               <span className="font-bold">2023 年</span>為試營運階段，進駐可享有
@@ -117,7 +117,7 @@ function SpaceFee() {
             馬上填表單！
           </h3>
           <img
-            src={goToAction}
+            src={goToAction.src}
             alt="Go button logo"
             className="hidden group-hover:block absolute right-30 bottom-2 md:right-1/3 md:bottom-4"
           />

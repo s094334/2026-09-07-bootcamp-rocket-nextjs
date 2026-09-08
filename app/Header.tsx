@@ -1,13 +1,13 @@
 import type { StaticImageData } from "next/image";
-import bannerBg from "../assets/banner/banner-bg.png";
-import rocketLogosm from "../assets/banner/banner-logo-rocket-sm.svg";
-import rocketLogolg from "../assets/banner/banner-logo-rocket-lg.svg";
-import rocketBtnsm from "../assets/banner/banner-btn-rocket-sm.svg";
-import rocketBtnlg from "../assets/banner/banner-btn-rocket-lg.svg";
-import coworkingLogosm from "../assets/banner/banner-logo-coworking-sm.svg";
-import coworkingLogolg from "../assets/banner/banner-logo-coworking-lg.svg";
-import coworkingBtnsm from "../assets/banner/banner-btn-coworking-sm.svg";
-import coworkingBtnlg from "../assets/banner/banner-btn-coworking-lg.svg";
+import bannerBg from "../src/assets/banner/banner-bg.png";
+import rocketLogosm from "../src/assets/banner/banner-logo-rocket-sm.svg";
+import rocketLogolg from "../src/assets/banner/banner-logo-rocket-lg.svg";
+import rocketBtnsm from "../src/assets/banner/banner-btn-rocket-sm.svg";
+import rocketBtnlg from "../src/assets/banner/banner-btn-rocket-lg.svg";
+import coworkingLogosm from "../src/assets/banner/banner-logo-coworking-sm.svg";
+import coworkingLogolg from "../src/assets/banner/banner-logo-coworking-lg.svg";
+import coworkingBtnsm from "../src/assets/banner/banner-btn-coworking-sm.svg";
+import coworkingBtnlg from "../src/assets/banner/banner-btn-coworking-lg.svg";
 
 type BannerMobileCardProps = {
   logoMobileImg: StaticImageData;
