@@ -3,7 +3,6 @@ import Head from "next/head";
 import { Josefin_Sans, Noto_Sans_TC } from "next/font/google";
 
 import "../styles/globals.css";
-import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 
 const josefinSans = Josefin_Sans({
@@ -30,7 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <div
         className={`${josefinSans.variable} ${notoSansTC.variable} font-sans min-h-full flex flex-col`}
       >
-        <Header />
         <Component {...pageProps} />
         <Footer />
       </div>

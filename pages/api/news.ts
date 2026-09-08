@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type NewsItem = {
+export type NewsItem = {
   id: number;
   content: string;
 };
