@@ -1,20 +1,23 @@
+import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import { getNews, type NewsData } from "./api/news";
 import Header from "../src/components/Header";
 import SpaceIntro from "../src/components/SpaceIntro";
 import SpaceDescription from "../src/components/SpaceDescription";
 import SpaceCarousel from "../src/components/SpaceCarousel";
 import SpaceFee from "../src/components/SpaceFee";
-import type { NewsItem } from "./api/news";
 
-const news: NewsItem[] = [
-  { id: 1, content: "Let’s join" },
-  { id: 2, content: "- 火箭隊培訓營 Rocket -" },
-  { id: 3, content: "- 共同空間 Co-working space -" },
-];
+export const getStaticProps = (async () => {
+  return { props: { news: getNews() } };
+}) satisfies GetStaticProps<{
+  news: NewsData;
+}>;
 
-export default function CoworkingPage() {
+export default function CoworkingPage({
+  news,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <Header news={news} />
+      <Header news={news.items} />
       <SpaceIntro />
       <SpaceDescription />
       <SpaceCarousel />
