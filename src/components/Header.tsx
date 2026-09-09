@@ -161,12 +161,16 @@ function Header({ news }: HeaderProps) {
         {data.items.map((item) => (
           <p key={item.id}>{item.content}</p>
         ))}
-        <button type="button" onClick={handleRefresh}>
+        <button
+          className="cursor-pointer"
+          type="button"
+          onClick={handleRefresh}
+        >
           更新
         </button>
-        <p>資料產生時間：{data.generatedAt}</p>
       </header>
       <section style={{ backgroundImage: `url(${bannerBg.src})` }}>
+        <p className="text-right pr-4">資料產生時間：{data.generatedAt}</p>
         <div className="flex md:hidden flex-col items-center py-15 gap-[46px]">
           {banners.map((banner) => {
             return <BannerMobileCard key={banner.id} {...banner} />;
