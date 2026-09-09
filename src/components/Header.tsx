@@ -162,7 +162,7 @@ function Header({ news }: HeaderProps) {
           <p key={item.id}>{item.content}</p>
         ))}
         <button
-          className="cursor-pointer"
+          className="cursor-pointer underline hover:text-neutral-500"
           type="button"
           onClick={handleRefresh}
         >
