@@ -17,7 +17,7 @@ export default function CoworkingPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <Header news={news.items} />
+      <Header news={news} />
       <SpaceIntro />
       <SpaceDescription />
       <SpaceCarousel />
