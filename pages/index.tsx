@@ -1,4 +1,4 @@
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import { getNews, type NewsData } from "./api/news";
 import Header from "../src/components/Header";
 import AboutRocket from "../src/components/AboutRocket";
@@ -7,15 +7,15 @@ import AboutTraining from "../src/components/AboutTraining";
 import AboutFee from "../src/components/AboutFee";
 import Support from "../src/components/Support";
 
-export const getStaticProps = (async () => {
+export const getServerSideProps = (async () => {
   return { props: { news: getNews() } };
-}) satisfies GetStaticProps<{
+}) satisfies GetServerSideProps<{
   news: NewsData;
 }>;
 
 export default function Home({
   news,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Header news={news.items} />
