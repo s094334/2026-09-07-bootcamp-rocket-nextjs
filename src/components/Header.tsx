@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 import type { NewsData } from "../../pages/api/news";
 import { useState } from "react";
+import Link from "next/link";
 
 import bannerBg from "../assets/banner/banner-bg.png";
 import rocketLogosm from "../assets/banner/banner-logo-rocket-sm.svg";
@@ -30,7 +31,7 @@ const BannerMobileCard = ({
   return (
     <div className="pr-10">
       <div className="max-w-[294px] bg-neutral-white rounded-border-m border-2 border-neutral-300 relative">
-        <a href={link}>
+        <Link href={link}>
           <div className="flex items-center mt-6">
             <img
               src={logoMobileImg.src}
@@ -49,7 +50,7 @@ const BannerMobileCard = ({
             alt="Banner button"
             className="absolute -right-10 top-7"
           />
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -77,7 +78,7 @@ const BannerWebCard = ({
   return (
     <>
       <div className="bg-neutral-white rounded-border-l border-2 border-neutral-300 max-w-110 max-h-112 w-full relative hover:-translate-y-4 duration-500">
-        <a href={link} className="flex flex-col items-center">
+        <Link href={link} className="flex flex-col items-center">
           <h2 className="font-bold text-desktop-h1 text-neutral-700 absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap">
             {title}
           </h2>
@@ -99,7 +100,7 @@ const BannerWebCard = ({
             alt="Rocket button"
             className="absolute -bottom-15 left-1/2 -translate-x-1/2"
           />
-        </a>
+        </Link>
       </div>
       <span
         className={`${showDivider ? "" : "hidden"} text-neutral-700 font-bold text-desktop-h1 self-center my-[34px] ml-[82px] mr-[83px] font-display`}
