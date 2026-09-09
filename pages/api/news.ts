@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type NewsItem = {
+export type NewsItem = {
   id: number;
   content: string;
 };
 
-type ResponseData = {
+export type NewsData = {
   generatedAt: string;
   items: NewsItem[];
 };
@@ -16,12 +16,16 @@ const news: NewsItem[] = [
   { id: 3, content: "- 共同空間 Co-working space -" },
 ];
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>,
-) {
-  res.status(200).json({
+export function getNews(): NewsData {
+  return {
     generatedAt: new Date().toISOString(),
     items: news,
-  });
+  };
+}
+
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<NewsData>,
+) {
+  res.status(200).json(getNews());
 }

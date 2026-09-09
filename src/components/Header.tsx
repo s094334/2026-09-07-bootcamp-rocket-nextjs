@@ -1,4 +1,6 @@
 import type { StaticImageData } from "next/image";
+import type { NewsItem } from "../../pages/api/news";
+
 import bannerBg from "../assets/banner/banner-bg.png";
 import rocketLogosm from "../assets/banner/banner-logo-rocket-sm.svg";
 import rocketLogolg from "../assets/banner/banner-logo-rocket-lg.svg";
@@ -107,7 +109,11 @@ const BannerWebCard = ({
   );
 };
 
-function Header() {
+type HeaderProps = {
+  news: NewsItem[];
+};
+
+function Header({ news }: HeaderProps) {
   const banners = [
     {
       id: 1,
@@ -143,9 +149,9 @@ function Header() {
   return (
     <>
       <header className="flex justify-center py-2 font-bold [&>p]:px-4 [&>p]:py-3 text-neutral-700 whitespace-nowrap overflow-hidden">
-        <p>Let’s join</p>
-        <p>- 火箭隊培訓營 Rocket -</p>
-        <p>- 共同空間 Co-working space -</p>
+        {news.map((item) => (
+          <p key={item.id}>{item.content}</p>
+        ))}
       </header>
       <section style={{ backgroundImage: `url(${bannerBg.src})` }}>
         <div className="flex md:hidden flex-col items-center py-15 gap-[46px]">
