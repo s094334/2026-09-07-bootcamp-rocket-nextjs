@@ -1,5 +1,5 @@
 import type { StaticImageData } from "next/image";
-
+import Image from "next/image";
 import rocket from "../assets/rocket-page/organizer/organizer-rocket-lg-2x.png";
 import hexschool from "../assets/rocket-page/organizer/organizer-hexschool-lg-2x.png";
 import goodidea from "../assets/rocket-page/organizer/organizer-goodidea-lg-2x.png";
@@ -18,8 +18,8 @@ const OrganizerCard = ({ img, role, companyName }: OrganizerCardProps) => {
   return (
     <li>
       <div className="bg-neutral-white rounded-border-m w-[196px] h-[148px] p-4 flex items-center justify-center">
-        <img
-          src={img.src}
+        <Image
+          src={img}
           alt={`${companyName} image`}
           className="max-w-full max-h-full"
         />

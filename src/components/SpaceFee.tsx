@@ -2,6 +2,7 @@ import promotionImgLg from "../assets/space-page/promotion-lg.svg";
 import promotionImgSm from "../assets/space-page/promotion-sm.svg";
 import checkLogo from "../assets/space-page/ic-check-lg.svg";
 import goToAction from "../assets/space-page/ic-go-coworking.svg";
+import Image from "next/image";
 
 type PricingFeature = {
   highlight: boolean;
@@ -28,7 +29,7 @@ const PricingCard = ({ title, price, features }: PricingCardProps) => {
       <ul className="flex flex-col gap-4 max-w-[365px] w-full mx-auto">
         {features.map((feature, index) => (
           <li key={index + 1} className="flex items-center gap-3">
-            <img src={checkLogo.src} alt="check logo" className="w-7 h-7" />
+            <Image src={checkLogo} alt="check logo" className="w-7 h-7" />
             <span
               className={`mt-1 ${feature.highlight ? "bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)]" : ""}`}
             >
@@ -77,8 +78,8 @@ function SpaceFee() {
       <div className="text-neutral-700 max-w-[1076px] w-full mx-auto">
         <div className="hidden md:block relative">
           <h2 className="font-bold text-desktop-h2">進駐費用</h2>
-          <img
-            src={promotionImgLg.src}
+          <Image
+            src={promotionImgLg}
             alt="Promotion image"
             className="absolute -top-25 left-20"
           />
@@ -88,7 +89,7 @@ function SpaceFee() {
           </p>
         </div>
         <div className="block md:hidden relative mb-4">
-          <img src={promotionImgSm.src} alt="Promotion image" />
+          <Image src={promotionImgSm} alt="Promotion image" />
           <div className="absolute flex flex-col top-4 left-3">
             <p className="font-normal text-sm">
               <span className="font-bold">2023 年</span>為試營運階段，進駐可享有
@@ -116,8 +117,8 @@ function SpaceFee() {
           <h3 className="font-bold text-mobile-h3 py-5 md:text-desktop-h3 text-neutral-700 md:py-6">
             馬上填表單！
           </h3>
-          <img
-            src={goToAction.src}
+          <Image
+            src={goToAction}
             alt="Go button logo"
             className="hidden group-hover:block absolute right-30 bottom-2 md:right-1/3 md:bottom-4"
           />

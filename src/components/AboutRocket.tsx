@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import aboutFrontend from "../assets/rocket-page/about/about-rocket-frontend.svg";
 import aboutBackend from "../assets/rocket-page/about/about-rocket-backend.svg";
@@ -35,8 +36,8 @@ const PositionCard = ({
         </h3>
       </div>
       <div className="max-w-full h-[60px] mt-34 mx-5 md:mt-0 md:ml-0 md:w-[169px] md:h-[208px] bg-neutral-200 rounded-border-l md:mr-9 relative">
-        <img
-          src={imgUrl.src}
+        <Image
+          src={imgUrl}
           alt={imgAlt}
           className="md:max-w-[164px] absolute left-1/2 -translate-x-1/2 bottom-3 md:-left-1/4 md:bottom-6 md:translate-0"
         />

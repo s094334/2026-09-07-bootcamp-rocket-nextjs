@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import type { NewsData } from "../../pages/api/news";
 import { useState } from "react";
 import Link from "next/link";
@@ -33,8 +34,8 @@ const BannerMobileCard = ({
       <div className="max-w-[294px] bg-neutral-white rounded-border-m border-2 border-neutral-300 relative">
         <Link href={link}>
           <div className="flex items-center mt-6">
-            <img
-              src={logoMobileImg.src}
+            <Image
+              src={logoMobileImg}
               alt="Banner logo"
               className="ml-6 mr-2"
             />
@@ -45,8 +46,8 @@ const BannerMobileCard = ({
           <h2 className="font-bold text-mobile-h4 text-neutral-500 ml-7 mt-2 mb-6 mr-[94px] whitespace-nowrap">
             {titleEn}
           </h2>
-          <img
-            src={btnMobileImg.src}
+          <Image
+            src={btnMobileImg}
             alt="Banner button"
             className="absolute -right-10 top-7"
           />
@@ -85,8 +86,8 @@ const BannerWebCard = ({
           <h2 className="font-bold text-desktop-body1 text-neutral-500 pt-9 text-center">
             {titleEn}
           </h2>
-          <img
-            src={logoWebImg.src}
+          <Image
+            src={logoWebImg}
             alt="Rocket logo"
             className="max-w-31 mt-6 mb-4"
           />
@@ -95,8 +96,8 @@ const BannerWebCard = ({
               <p key={index}> # {description}</p>
             ))}
           </div>
-          <img
-            src={btnWebImg.src}
+          <Image
+            src={btnWebImg}
             alt="Rocket button"
             className="absolute -bottom-15 left-1/2 -translate-x-1/2"
           />
