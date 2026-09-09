@@ -18,7 +18,7 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
-      <Header news={news.items} />
+      <Header news={news} />
       <AboutRocket />
       <SuccessCase />
       <AboutTraining />

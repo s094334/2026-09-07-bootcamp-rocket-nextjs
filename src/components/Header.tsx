@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
-import type { NewsItem } from "../../pages/api/news";
+import type { NewsData } from "../../pages/api/news";
+import { useState } from "react";
 
 import bannerBg from "../assets/banner/banner-bg.png";
 import rocketLogosm from "../assets/banner/banner-logo-rocket-sm.svg";
@@ -110,10 +111,18 @@ const BannerWebCard = ({
 };
 
 type HeaderProps = {
-  news: NewsItem[];
+  news: NewsData;
 };
 
 function Header({ news }: HeaderProps) {
+  const [data, setData] = useState(news);
+
+  const handleRefresh = async () => {
+    const res = await fetch("/api/news");
+    const newData: NewsData = await res.json();
+    setData(newData);
+  };
+
   const banners = [
     {
       id: 1,
@@ -149,11 +158,19 @@ function Header({ news }: HeaderProps) {
   return (
     <>
       <header className="flex justify-center py-2 font-bold [&>p]:px-4 [&>p]:py-3 text-neutral-700 whitespace-nowrap overflow-hidden">
-        {news.map((item) => (
+        {data.items.map((item) => (
           <p key={item.id}>{item.content}</p>
         ))}
+        <button
+          className="cursor-pointer underline hover:text-neutral-500"
+          type="button"
+          onClick={handleRefresh}
+        >
+          更新
+        </button>
       </header>
       <section style={{ backgroundImage: `url(${bannerBg.src})` }}>
+        <p className="text-right pr-4">資料產生時間：{data.generatedAt}</p>
         <div className="flex md:hidden flex-col items-center py-15 gap-[46px]">
           {banners.map((banner) => {
             return <BannerMobileCard key={banner.id} {...banner} />;
