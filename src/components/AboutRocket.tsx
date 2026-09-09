@@ -39,7 +39,7 @@ const PositionCard = ({
         <Image
           src={imgUrl}
           alt={imgAlt}
-          className="md:max-w-[164px] absolute left-1/2 -translate-x-1/2 bottom-3 md:-left-1/4 md:bottom-6 md:translate-0"
+          className="md:max-w-[164px] h-auto absolute left-1/2 -translate-x-1/2 bottom-3 md:-left-1/4 md:bottom-6 md:translate-0"
         />
       </div>
     </div>

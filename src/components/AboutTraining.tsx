@@ -88,7 +88,7 @@ const ProgramCard = ({
         <Image
           src={img}
           alt={imgAlt}
-          className="max-w-[218px] md:max-w-[282px]"
+          className="max-w-[218px] md:max-w-[282px] h-auto"
         />
       </div>
     </div>

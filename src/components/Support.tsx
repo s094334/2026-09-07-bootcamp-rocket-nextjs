@@ -21,7 +21,7 @@ const OrganizerCard = ({ img, role, companyName }: OrganizerCardProps) => {
         <Image
           src={img}
           alt={`${companyName} image`}
-          className="max-w-full max-h-full"
+          className="max-w-full max-h-full w-auto h-auto"
         />
       </div>
       <h4 className="font-bold text-sm md:text-desktop-body3 mt-4">{role}</h4>

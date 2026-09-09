@@ -89,7 +89,7 @@ const BannerWebCard = ({
           <Image
             src={logoWebImg}
             alt="Rocket logo"
-            className="max-w-31 mt-6 mb-4"
+            className="max-w-31 h-auto mt-6 mb-4"
           />
           <div className="text-neutral-700 font-bold [&>p]:leading-others text-desktop-body2 flex flex-col items-center mb-[107px]">
             {descriptions.map((description, index) => (

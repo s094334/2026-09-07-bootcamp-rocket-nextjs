@@ -25,7 +25,7 @@ const FaqItem = ({ numberImg, index, question, answer }: FaqItemProps) => {
           <Image
             src={numberImg}
             alt={`No.${index + 1} logo`}
-            className="self-start w-5 md:w-6"
+            className="self-start w-5 md:w-6 h-auto"
           />
           <div className="flex flex-col gap-2">
             <p className="font-bold text-desktop-body3">{question}</p>
