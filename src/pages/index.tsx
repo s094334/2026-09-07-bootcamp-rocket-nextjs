@@ -1,12 +1,12 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import { getNews, type NewsData } from "./api/news";
 import Head from "next/head";
-import Header from "../src/components/Header";
-import AboutRocket from "../src/components/AboutRocket";
-import SuccessCase from "../src/components/SuccessCase";
-import AboutTraining from "../src/components/AboutTraining";
-import AboutFee from "../src/components/AboutFee";
-import Support from "../src/components/Support";
+import Header from "@/components/Header";
+import AboutRocket from "@/components/AboutRocket";
+import SuccessCase from "@/components/SuccessCase";
+import AboutTraining from "@/components/AboutTraining";
+import AboutFee from "@/components/AboutFee";
+import Support from "@/components/Support";
 
 export const getServerSideProps = (async () => {
   return { props: { news: getNews() } };

@@ -1,11 +1,11 @@
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { getNews, type NewsData } from "./api/news";
 import Head from "next/head";
-import Header from "../src/components/Header";
-import SpaceIntro from "../src/components/SpaceIntro";
-import SpaceDescription from "../src/components/SpaceDescription";
-import SpaceCarousel from "../src/components/SpaceCarousel";
-import SpaceFee from "../src/components/SpaceFee";
+import Header from "@/components/Header";
+import SpaceIntro from "@/components/SpaceIntro";
+import SpaceDescription from "@/components/SpaceDescription";
+import SpaceCarousel from "@/components/SpaceCarousel";
+import SpaceFee from "@/components/SpaceFee";
 
 export const getStaticProps = (async () => {
   return { props: { news: getNews() } };
