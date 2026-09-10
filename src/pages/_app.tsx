@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Josefin_Sans, Noto_Sans_TC } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "../styles/globals.css";
 import Footer from "@/components/Footer";
@@ -37,6 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer />
       </div>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </>
   );
 }
