@@ -1,6 +1,8 @@
 import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import type { NewsData } from "../../pages/api/news";
 import { useState } from "react";
+import Link from "next/link";
 
 import bannerBg from "../assets/banner/banner-bg.png";
 import rocketLogosm from "../assets/banner/banner-logo-rocket-sm.svg";
@@ -30,12 +32,13 @@ const BannerMobileCard = ({
   return (
     <div className="pr-10">
       <div className="max-w-[294px] bg-neutral-white rounded-border-m border-2 border-neutral-300 relative">
-        <a href={link}>
+        <Link href={link}>
           <div className="flex items-center mt-6">
-            <img
-              src={logoMobileImg.src}
+            <Image
+              src={logoMobileImg}
               alt="Banner logo"
               className="ml-6 mr-2"
+              fetchPriority="high"
             />
             <h1 className="m-0 leading-none font-bold text-mobile-h1 text-neutral-700 mt-[5px]">
               {title}
@@ -44,12 +47,12 @@ const BannerMobileCard = ({
           <h2 className="font-bold text-mobile-h4 text-neutral-500 ml-7 mt-2 mb-6 mr-[94px] whitespace-nowrap">
             {titleEn}
           </h2>
-          <img
-            src={btnMobileImg.src}
+          <Image
+            src={btnMobileImg}
             alt="Banner button"
             className="absolute -right-10 top-7"
           />
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -77,29 +80,30 @@ const BannerWebCard = ({
   return (
     <>
       <div className="bg-neutral-white rounded-border-l border-2 border-neutral-300 max-w-110 max-h-112 w-full relative hover:-translate-y-4 duration-500">
-        <a href={link} className="flex flex-col items-center">
+        <Link href={link} className="flex flex-col items-center">
           <h2 className="font-bold text-desktop-h1 text-neutral-700 absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap">
             {title}
           </h2>
           <h2 className="font-bold text-desktop-body1 text-neutral-500 pt-9 text-center">
             {titleEn}
           </h2>
-          <img
-            src={logoWebImg.src}
+          <Image
+            src={logoWebImg}
             alt="Rocket logo"
-            className="max-w-31 mt-6 mb-4"
+            className="max-w-31 h-auto mt-6 mb-4"
+            fetchPriority="high"
           />
           <div className="text-neutral-700 font-bold [&>p]:leading-others text-desktop-body2 flex flex-col items-center mb-[107px]">
             {descriptions.map((description, index) => (
               <p key={index}> # {description}</p>
             ))}
           </div>
-          <img
-            src={btnWebImg.src}
+          <Image
+            src={btnWebImg}
             alt="Rocket button"
             className="absolute -bottom-15 left-1/2 -translate-x-1/2"
           />
-        </a>
+        </Link>
       </div>
       <span
         className={`${showDivider ? "" : "hidden"} text-neutral-700 font-bold text-desktop-h1 self-center my-[34px] ml-[82px] mr-[83px] font-display`}

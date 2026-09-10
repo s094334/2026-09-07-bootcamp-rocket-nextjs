@@ -19,12 +19,17 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>火箭隊 Bootcamp Rocket</title>
         <meta
           name="description"
           content="Practicing Next.js — Bootcamp Rocket"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          property="og:title"
+          content="火箭隊 Bootcamp Rocket"
+          key="og:title"
+        />
+        <title>火箭隊 Bootcamp Rocket</title>
       </Head>
       <div
         className={`${josefinSans.variable} ${notoSansTC.variable} font-sans min-h-full flex flex-col`}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 import backgroundImage from "../assets/rocket-page/training/training-bg.png";
@@ -84,10 +85,10 @@ const ProgramCard = ({
             </ol>
           </div>
         </div>
-        <img
-          src={img.src}
+        <Image
+          src={img}
           alt={imgAlt}
-          className="max-w-[218px] md:max-w-[282px]"
+          className="max-w-[218px] md:max-w-[282px] h-auto"
         />
       </div>
     </div>
@@ -103,7 +104,7 @@ type CoachPhotoProps = {
 const CoachPhoto = ({ img, imgAlt, onSelect }: CoachPhotoProps) => {
   return (
     <button type="button" onClick={onSelect} className="cursor-pointer">
-      <img src={img.src} alt={imgAlt} />
+      <Image src={img} alt={imgAlt} />
     </button>
   );
 };
@@ -342,8 +343,8 @@ function AboutTraining() {
           <h3 className="font-bold text-mobile-h3 md:text-desktop-h3 text-neutral-700">
             馬上報名！
           </h3>
-          <img
-            src={callToAction.src}
+          <Image
+            src={callToAction}
             alt="Go button logo"
             className="hidden group-hover:block absolute right-10 bottom-2 md:right-1/3 md:bottom-4"
           />

@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 import restSpace from "../assets/space-page/intro-rest-lg.png";
@@ -28,10 +29,10 @@ const AreaFeature = ({
     <div
       className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} justify-center items-center gap-4 md:gap-10`}
     >
-      <img
-        src={img.src}
+      <Image
+        src={img}
         alt={`${title} image`}
-        className="min-w-[332px] md:max-w-[526px] flex-1"
+        className="min-w-[332px] md:max-w-[526px] h-auto flex-1"
       />
       <div className="md:max-w-[494px] flex flex-col gap-2 md:gap-5 flex-1 w-full">
         <h3 className="font-bold text-mobile-body1 md:text-desktop-body1">
@@ -52,10 +53,10 @@ type ServiceFeatureProps = {
 const ServiceFeature = ({ img, title, description }: ServiceFeatureProps) => {
   return (
     <div className="flex items-start md:flex-col md:items-center gap-6 md:px-12">
-      <img
-        src={img.src}
+      <Image
+        src={img}
         alt={`${title} logo`}
-        className="max-w-[48px] md:max-w-[120px] text-left"
+        className="max-w-[48px] md:max-w-[120px] h-auto text-left"
       />
       <div className="flex flex-col md:items-center gap-2 w-full">
         <h4 className="font-bold text-mobile-body2">{title}</h4>
