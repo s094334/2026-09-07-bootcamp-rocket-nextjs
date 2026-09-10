@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Josefin_Sans, Noto_Sans_TC } from "next/font/google";
 
 import "../styles/globals.css";
-import Footer from "../src/components/Footer";
+import Footer from "@/components/Footer";
 
 const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
