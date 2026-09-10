@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-josefin-sans), var(--font-noto-sans-tc), sans-serif;
-  --font-display: var(--font-noto-sans-tc), sans-serif;
-  /* 字型大小 */
   --text-desktop-h1: 48px;
   --text-desktop-h2: 36px;
   --text-desktop-h3: 32px;
@@ -55,4 +52,8 @@
   --color-neutral-500: #9a9a9a;
   --color-neutral-600: #757575;
   --color-neutral-700: #363636;
+}
+
+@theme inline {
+  --font-sans: var(--font-josefin-sans), var(--font-noto-sans-tc), sans-serif;
 }
