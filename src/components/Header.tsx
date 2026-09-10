@@ -38,6 +38,7 @@ const BannerMobileCard = ({
               src={logoMobileImg}
               alt="Banner logo"
               className="ml-6 mr-2"
+              fetchPriority="high"
             />
             <h1 className="m-0 leading-none font-bold text-mobile-h1 text-neutral-700 mt-[5px]">
               {title}
@@ -90,6 +91,7 @@ const BannerWebCard = ({
             src={logoWebImg}
             alt="Rocket logo"
             className="max-w-31 h-auto mt-6 mb-4"
+            fetchPriority="high"
           />
           <div className="text-neutral-700 font-bold [&>p]:leading-others text-desktop-body2 flex flex-col items-center mb-[107px]">
             {descriptions.map((description, index) => (
