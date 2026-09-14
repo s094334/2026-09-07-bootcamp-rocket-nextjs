@@ -17,12 +17,22 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Home() {
+async function MarqueeSection() {
   const news = await getNews();
+  return <Marquee news={news} />;
+}
+
+export default function Home() {
   return (
     <>
-      <Suspense fallback={<p>Loading…</p>}>
-        <Marquee news={news} />
+      <Suspense
+        fallback={
+          <header className="flex justify-center py-2 font-bold [&>p]:px-4 [&>p]:py-3 text-neutral-700 whitespace-nowrap overflow-hidden">
+            <p>Loading…</p>
+          </header>
+        }
+      >
+        <MarqueeSection />
       </Suspense>
       <Header />
       <AboutRocket />
