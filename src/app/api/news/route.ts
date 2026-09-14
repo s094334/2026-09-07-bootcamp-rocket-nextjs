@@ -25,6 +25,6 @@ export async function getNews(): Promise<NewsData> {
   };
 }
 
-export async function GET(request: Request) {
-  Response.json(await getNews());
+export async function GET() {
+  return Response.json(await getNews());
 }

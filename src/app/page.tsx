@@ -1,6 +1,7 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import { getNews, type NewsData } from "../app/api/news/route";
+import { getNews, type NewsData } from "./api/news/route";
 import Head from "next/head";
+import Marquee from "@/components/Marquee";
 import Header from "@/components/Header";
 import AboutRocket from "@/components/AboutRocket";
 import SuccessCase from "@/components/SuccessCase";
@@ -22,7 +23,8 @@ export default function Home({
       <Head>
         <meta name="description" content={news.items[1]?.content ?? "火箭隊"} />
       </Head>
-      <Header news={news} />
+      <Marquee news={news} />
+      <Header />
       <AboutRocket />
       <SuccessCase />
       <AboutTraining />

@@ -1,5 +1,6 @@
 import { getNews } from "../api/news/route";
 import type { Metadata } from "next";
+import Marquee from "@/components/Marquee";
 import Header from "@/components/Header";
 import SpaceIntro from "@/components/SpaceIntro";
 import SpaceDescription from "@/components/SpaceDescription";
@@ -17,7 +18,8 @@ export default async function CoworkingPage() {
 
   return (
     <>
-      <Header news={news} />
+      <Marquee news={news} />
+      <Header />
       <SpaceIntro />
       <SpaceDescription />
       <SpaceCarousel />
