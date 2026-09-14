@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 export type NewsItem = {
   id: number;
   content: string;
@@ -16,14 +18,14 @@ const news: NewsItem[] = [
 
 const MANUAL_DELAY_MS = 2000;
 
-export async function getNews(): Promise<NewsData> {
+export const getNews = cache(async (): Promise<NewsData> => {
   await new Promise((resolve) => setTimeout(resolve, MANUAL_DELAY_MS));
 
   return {
     generatedAt: new Date().toISOString(),
     items: news,
   };
-}
+});
 
 export async function GET() {
   return Response.json(await getNews());
