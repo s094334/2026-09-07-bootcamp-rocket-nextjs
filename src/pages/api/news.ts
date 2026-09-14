@@ -16,16 +16,20 @@ const news: NewsItem[] = [
   { id: 3, content: "- 共同空間 Co-working space -" },
 ];
 
-export function getNews(): NewsData {
+const MANUAL_DELAY_MS = 2000;
+
+export async function getNews(): Promise<NewsData> {
+  await new Promise((resolve) => setTimeout(resolve, MANUAL_DELAY_MS));
+
   return {
     generatedAt: new Date().toISOString(),
     items: news,
   };
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<NewsData>,
 ) {
-  res.status(200).json(getNews());
+  res.status(200).json(await getNews());
 }
