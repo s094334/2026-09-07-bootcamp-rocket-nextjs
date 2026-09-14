@@ -9,7 +9,7 @@ import AboutFee from "@/components/AboutFee";
 import Support from "@/components/Support";
 
 export const getServerSideProps = (async () => {
-  return { props: { news: getNews() } };
+  return { props: { news: await getNews() } };
 }) satisfies GetServerSideProps<{
   news: NewsData;
 }>;

@@ -8,7 +8,7 @@ import SpaceCarousel from "@/components/SpaceCarousel";
 import SpaceFee from "@/components/SpaceFee";
 
 export const getStaticProps = (async () => {
-  return { props: { news: getNews() } };
+  return { props: { news: await getNews() } };
 }) satisfies GetStaticProps<{
   news: NewsData;
 }>;
