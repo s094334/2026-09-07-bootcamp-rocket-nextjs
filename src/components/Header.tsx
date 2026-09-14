@@ -1,7 +1,7 @@
 "use client";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
-import type { NewsData } from "@/pages/api/news";
+import type { NewsData } from "@/app/api/news/route";
 import { useState } from "react";
 import Link from "next/link";
 

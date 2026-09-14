@@ -1,5 +1,5 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import { getNews, type NewsData } from "./api/news";
+import { getNews, type NewsData } from "../app/api/news/route";
 import Head from "next/head";
 import Header from "@/components/Header";
 import AboutRocket from "@/components/AboutRocket";

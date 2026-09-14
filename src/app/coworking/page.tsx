@@ -1,4 +1,4 @@
-import { getNews } from "../../pages/api/news";
+import { getNews } from "../api/news/route";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import SpaceIntro from "@/components/SpaceIntro";

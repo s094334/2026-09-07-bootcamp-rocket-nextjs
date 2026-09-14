@@ -1,5 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-
 export type NewsItem = {
   id: number;
   content: string;
@@ -27,9 +25,6 @@ export async function getNews(): Promise<NewsData> {
   };
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<NewsData>,
-) {
-  res.status(200).json(await getNews());
+export async function GET(request: Request) {
+  Response.json(await getNews());
 }
