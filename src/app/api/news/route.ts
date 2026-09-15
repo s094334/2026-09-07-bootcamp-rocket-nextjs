@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { io } from "next/cache";
 
 export type NewsItem = {
   id: number;
@@ -19,6 +20,7 @@ const news: NewsItem[] = [
 const MANUAL_DELAY_MS = 2000;
 
 export const getNews = cache(async (): Promise<NewsData> => {
+  await io();
   await new Promise((resolve) => setTimeout(resolve, MANUAL_DELAY_MS));
 
   return {

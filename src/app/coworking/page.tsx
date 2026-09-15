@@ -1,4 +1,5 @@
 import { getNews } from "../api/news/route";
+import { cacheLife } from "next/cache";
 import type { Metadata } from "next";
 import Marquee from "@/components/Marquee";
 import Header from "@/components/Header";
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 };
 
 export default async function CoworkingPage() {
+  "use cache";
+  cacheLife("max");
+
   const news = await getNews();
 
   return (
