@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Josefin_Sans, Noto_Sans_TC } from "next/font/google";
+import PreloadResources from "../components/PreloadResource";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "../styles/globals.css";
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="h-full">
       <body className="min-h-full">
+        <PreloadResources />
         <div
           className={`${josefinSans.variable} ${notoSansTC.variable} font-sans min-h-full flex flex-col`}
         >
