@@ -1,4 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { cache } from "react";
+import { io } from "next/cache";
 
 export type NewsItem = {
   id: number;
@@ -18,18 +19,16 @@ const news: NewsItem[] = [
 
 const MANUAL_DELAY_MS = 2000;
 
-export async function getNews(): Promise<NewsData> {
+export const getNews = cache(async (): Promise<NewsData> => {
+  await io();
   await new Promise((resolve) => setTimeout(resolve, MANUAL_DELAY_MS));
 
   return {
     generatedAt: new Date().toISOString(),
     items: news,
   };
-}
+});
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<NewsData>,
-) {
-  res.status(200).json(await getNews());
+export async function GET() {
+  return Response.json(await getNews());
 }

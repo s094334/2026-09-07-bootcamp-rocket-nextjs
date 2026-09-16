@@ -1,13 +1,14 @@
 import Link from "next/link";
-import Head from "next/head";
+import type { Metadata } from "next";
 
-export default function Custom404() {
+export const metadata: Metadata = {
+  title: "404 找不到頁面",
+  description: "Practicing Next.js — 404 Not found",
+};
+
+export default function NotFound() {
   return (
     <>
-      <Head>
-        <meta name="description" content="Practicing Next.js — 404 Not found" />
-        <title>404 找不到頁面</title>
-      </Head>
       <div>
         <h2 className="font-bold text-mobile-h2 md:text-desktop-h2 text-center pt-10">
           404 找不到頁面
