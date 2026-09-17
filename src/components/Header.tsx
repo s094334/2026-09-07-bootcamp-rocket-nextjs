@@ -1,7 +1,6 @@
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
-import Marquee from "./Marquee";
 
 import bannerBg from "../assets/banner/banner-bg.png";
 import rocketLogosm from "../assets/banner/banner-logo-rocket-sm.svg";

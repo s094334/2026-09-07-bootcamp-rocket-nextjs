@@ -1,5 +1,5 @@
-import type { Metadata, ResolvingMetadata } from "next";
-import { getNews, type NewsData } from "./api/news/route";
+import type { Metadata } from "next";
+import { getNews } from "./api/news/route";
 import { Suspense } from "react";
 import Marquee from "@/components/Marquee";
 import Header from "@/components/Header";
